@@ -1,9 +1,11 @@
+
 * {
     box-sizing: border-box;
   }
   
   body {
     font-family: Helvetica, sans-serif;
+    background: #e0e4e0;
   }
   
   /* Style the header */
@@ -48,38 +50,111 @@
     
   }
   .container {
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
     background: #ACD6AB;
   }
   
-  .span3 {
-    width: 24.6%;
-    height: auto;
-    display: inline-block;
-    color: chartreuse;
-  }
+  .circle1{
+        /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
+        width: 30%; border-radius: 50%;
+        background: #24ae56;
+       
+        /* (B) NECESSARY TO POSITION TEXT BLOCK */
+        line-height: 0;
+        position: relative;
+      }
+       
+      /* (C) MATCH HEIGHT */
+      .circle1::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+       
+      /* (D) TEXT BLOCK */
+      .circle1 .txt {
+        /* (D1) CENTER TEXT IN CIRCLE */
+        position: absolute; bottom: 50%; 
+        width: 100%; text-align: center;
+       
+        /* (D2) COSMETICS */
+        font-family:  Helvetica, sans-serif;
+        font-weight: 100;
+      }
+        
+      
   
-  .span4 {
-    width: 33.0%;
-    height: auto;
-    display: inline-block;
-  }
+
+  .circle2 {
+
+     /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
+     width: 30%; border-radius: 50%;
+     background: tomato;
+    
+     /* (B) NECESSARY TO POSITION TEXT BLOCK */
+     line-height: 0;
+     position: relative;
+   }
+    
+   /* (C) MATCH HEIGHT */
+   .circle2::after {
+     content: "";
+     display: block;
+     padding-bottom: 100%;
+   }
+    
+   /* (D) TEXT BLOCK */
+   .circle2 .txt {
+     /* (D1) CENTER TEXT IN CIRCLE */
+     position: absolute; bottom: 50%; 
+     width: 100%; text-align: center;
+    
+     /* (D2) COSMETICS */
+     font-family:  Helvetica, sans-serif;
+     font-weight: 100;
   
-  .span6 {
-    width: 49.7%;
-    height: auto;
-    display: inline-block;
-  }
-  
-  .circle {
-    position: relative;
-    border-radius: 50%;
-    width: 100%;
-    height: auto;
-    padding-top: 100%;
-    background: tomato;
-  }
+}
+
+
+    .datetime{
+        font-family: Helvetica, sans-serif;
+        font-weight: 100;
+        font-size: 36px;
+        margin-left: 80px;
+    }
+
+    .clockdate-wrapper {
+       
+        
+        width:100%;
+        border-radius:5px;
+        margin-left:80px;
+        background: #ACD6AB;
+      
+    }
+    #clock{
+        font-family: helvetica, sans-serif;
+        font-weight: 100;
+        font-size:60px;
+        color:#000000;
+    }
+    #clock span {
+        
+        
+        font-size:50px;
+        position:relative;
+        
+    }
+    #date {
+        letter-spacing:3px;
+        font-size:20px;
+        font-family:helvetica;
+        font-weight: 100;
+        color:#000000;
+    }
 
   /* Style the footer */
   .footer {
@@ -89,6 +164,4 @@
     text-align: center;
   }
 
-  #myDiv{
-    font-size: 20px;
-  }
+ 
