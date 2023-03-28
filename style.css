@@ -50,113 +50,67 @@
     background-color:#ACD6AB;
     
   }
-  .container {
-    display: flex;
-    flex-direction: row;
-    row-gap: 1px;
-    column-gap: 1px;
-    flex-wrap: wrap;
-    height: auto;
-    background: #ACD6AB;
-    cursor: pointer;
-    user-select: none;
+  .scene {
+    display: inline-block;
+  width: 160px;
+  height: 160px;
+/*   border: 1px solid #CCC; */
+  
+  
   
   }
 
   
   
-  .circle1{
-        /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
-        width: 25%; border-radius: 50%;
-        background: #24ae56;
-       
-        /* (B) NECESSARY TO POSITION TEXT BLOCK */
-        line-height: 0;
-        position: relative;
-        border:1px solid rgb(0, 0, 0);    
-        -moz-border-radius:50%;
+ 
+  
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 0.5s;
+    border:0.5px solid rgb(0, 0, 0);    
+    -moz-border-radius:50%;
     -webkit-border-radius:50%;
-      }
-       
-      /* (C) MATCH HEIGHT */
-      .circle1::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-      }
-       
-      /* (D) TEXT BLOCK */
-      .circle1 .txt {
-        /* (D1) CENTER TEXT IN CIRCLE */
-        position: absolute; bottom: 50%; 
-        width: 100%; text-align: center;
-       
-        /* (D2) COSMETICS */
-        font-family:  Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 100;
-      }
-        
-      .circle1.is-flipped {
-        transform: translateX(-100%) rotateY(-180deg);
-      }
-      
-      .circle1__face {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        line-height: 260px;
-        color: white;
-        text-align: center;
-        font-weight: bold;
-        font-size: 40px;
-        backface-visibility: hidden;
-      }
-      
-      .circle1__face--front {
-        background: #24ae56;
-      }
-      
-      .circle1__face--back {
-        background: tomato;
-        transform: rotateY(180deg);
-      }
-      
+  }
   
-
-  .circle2 {
-
-     /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
-     width: 25%; border-radius: 50%;
-     background: tomato;
-    
-     /* (B) NECESSARY TO POSITION TEXT BLOCK */
-     line-height: 0;
-     position: relative;
-     border:1px solid rgb(0, 0, 0);    
-     -moz-border-radius:50%;
- -webkit-border-radius:50%;
-   }
-    
-   /* (C) MATCH HEIGHT */
-   .circle2::after {
-     content: "";
-     display: block;
-     padding-bottom: 100%;
-   }
-    
-   /* (D) TEXT BLOCK */
-   .circle2 .txt {
-     /* (D1) CENTER TEXT IN CIRCLE */
-     position: absolute; bottom: 50%; 
-     width: 100%; text-align: center;
-    
-     /* (D2) COSMETICS */
-     font-size: 12px;
-     font-family:  Helvetica, sans-serif;
-     font-weight: 100;
+  .card.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+  }
   
-}
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    line-height: 170px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border:0.5px solid rgb(0, 0, 0);    
+    -moz-border-radius:50%;
+-webkit-border-radius:50%;
+    backface-visibility: hidden;
+  }
+  
+  .card__face--front {
+    background: rgb(35, 168, 57);
+    font-weight: 100;
+    font-size: 16px;
+  }
+  
+  .card__face--back {
+    background: D6786B;
+    font-weight: 100;
+    font-size: 16px;
+    transform: rotateY(180deg);
+  }
+  
 
 
     .datetime{
