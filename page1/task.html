@@ -23,23 +23,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header">
+    
         <a href="//index.html" > <p> Home Status </p> </a>
-    </div>
+
     
 
     <div class="grid-container">
+
+        <div class="left">
         <div class="heading">
             Task
             <br>Randomizer
         </div>
-
+        <br>
         <div id="myDIV" class="header">
-            <h2 style="margin:5px">My To Do List</h2>
+            <h2 style="margin:5px">Add tasks here</h2>
             <input type="text" id="myInput" placeholder="Title...">
             <span onclick="newElement()" class="addBtn">Add</span>
           </div>
-          
+        </div>
+        <div class="right">
+
           <ul id="myUL">
             <li>Hit the gym</li>
             <li class="checked">Pay bills</li>
@@ -48,6 +52,7 @@
             <li>Read a book</li>
             <li>Organize office</li>
           </ul>
+        </div>
     </div>
     </body>
 </html>

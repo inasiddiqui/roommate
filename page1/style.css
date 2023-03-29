@@ -10,7 +10,10 @@
   
 
   .grid-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    margin-left: 30px;
     flex-direction: column;
   }
 
@@ -23,10 +26,22 @@
 
   }
 
+  h2{
+    font-weight: 100;
+  }
+
+  .left,
+  .right {
+    padding: 10px;
+    font-weight: 100;
+    
+    
+  }
+
 
   ul {
-    margin: 0;
-    padding: 0;
+    margin: 5;
+    padding: 5;
   }
   
   /* Style the list items */
@@ -35,7 +50,7 @@
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #eee;
+    background: tomato;
     font-size: 18px;
     transition: 0.2s;
     
@@ -48,7 +63,7 @@
   
   /* Set all odd list items to a different color (zebra-stripes) */
   ul li:nth-child(odd) {
-    background: #f9f9f9;
+    background: rgb(69, 125, 69);
   }
   
   /* Darker background-color on hover */
@@ -92,9 +107,9 @@
   
   /* Style the header */
   .header {
-    background-color: #f44336;
+    border: 0.5px #555 solid ;
     padding: 30px 40px;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
   }
   
