@@ -1,0 +1,24 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Helvetica, sans-serif;
+    background: #f6d188;
+  }
+  
+
+  .grid-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heading{
+    font-family: Helvetica, sans-serif;
+    font-size: 104px;
+    font-weight: 100;
+    margin-left: 80px;
+    line-height: 0.9;
+
+  }
