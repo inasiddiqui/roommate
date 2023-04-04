@@ -15,6 +15,7 @@
     text-align: center;
     font-size: 16px;
     font-weight: 100;
+    color: #f1f1f1;
   }
   
   h2{
@@ -125,7 +126,7 @@
         
         width:100%;
         
-        margin-left:80px;
+       padding-top: 40px;
         background: #ACD6AB;
       
     }
@@ -143,6 +144,7 @@
         
     }
     #date {
+      padding-top: 20px;
         letter-spacing:3px;
         font-size:20px;
         font-family:helvetica;

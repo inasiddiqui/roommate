@@ -8,6 +8,7 @@
 		<link href="style.css" rel="stylesheet">
         <script defer src="assets/clock.js"></script>
         <script defer src="assets/flip.js"></script>
+        <script defer src="assets/form-state.js"></script>
 		
 
 
@@ -23,22 +24,33 @@
     <title>Document</title>
 </head>
 <body>
+
+  
     
         <div class="header">
             <a href="page1/task.html" > <p> Task randomizer </p> </a>
         </div>
+
+        <form>
         <div class="grid-container">
         <div class="left" >Home <br> Status
             <br>
             2507
             <br>
-
-            <div id="myDiv"></div>
+            <div id="clockdate">
+              <div class="clockdate-wrapper">
+                <div id="clock"></div>
+                
+                <div id="date"></div>
+              </div>
+            </div>
         </div>
+
         <div class="right" >
 
             <div class="scene scene--card">
                 <div class="card">
+                  
                   <div class="card__face card__face--front">Milk</div>
                   <div class="card__face card__face--back">No Milk</div>
                 </div>
@@ -151,6 +163,8 @@
                 </div>
               </div> -->
         </div>
+
+      </form>
     
     <div id="clockdate">
         <div class="clockdate-wrapper">
