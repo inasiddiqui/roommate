@@ -112,7 +112,23 @@
     transform: rotateY(180deg);
   }
   
+  .box{
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background-color: #ACD6AB;
 
+  }
+
+  .box :checked{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background-color: #1eb95f;
+  
+    }
+   
+  
 
     .datetime{
         font-family: Helvetica, sans-serif;
@@ -180,5 +196,3 @@ div[contenteditable] {
 	padding: 8px;
 }
 
-
- 
