@@ -49,9 +49,12 @@
     
   }
   .scene {
-    display: inline-block;
-  width: 160px;
-  height: 160px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+  width:450px;
+  height: 450px;
+  gap: 2px;
 /*   border: 1px solid #CCC; */
   
   
@@ -205,7 +208,7 @@
   
   .left,
   .right {
-    padding: 8%;
+    padding: 4%;
     font-weight: 100;
     
     
@@ -220,6 +223,7 @@
 
   .right{
     background-color:#ACD6AB;
+    margin-right: 8%;
     
   }
   .datetime{
@@ -263,8 +267,8 @@
   display: grid;
   grid-template-columns: auto auto auto;
   flex-wrap: wrap;
-width: 360px;
-height: 360px;
+width: 350px;
+height: 350px;
 gap: 2px;
 
 }
@@ -296,7 +300,7 @@ gap: 2px;
   color: rgb(0, 0, 0);
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   border:0.5px solid rgb(0, 0, 0);    
   -moz-border-radius:50%;
 -webkit-border-radius:50%;
@@ -306,13 +310,13 @@ gap: 2px;
 .card__face--front {
   background: rgb(35, 168, 57);
   font-weight: 100;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .card__face--back {
   background: D6786B;
   font-weight: 100;
-  font-size: 16px;
+  font-size: 14px;
   transform: rotateY(180deg);
 }
 
