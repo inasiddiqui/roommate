@@ -3,15 +3,18 @@
   
   body {
     font-family: Helvetica, sans-serif;
-    background: #ACD6AB;
+    background: #e4e3d9;
     margin: 0;
   }
   
 
   .header {
     padding: 10px 16px;
-    background: #555;
+    background: black;
     color: #f1f1f1;
+  }
+  h2{
+    padding-left: 100px;
   }
   
 
@@ -37,7 +40,7 @@
   }
   
   .left{
-    background-color:#ACD6AB;
+    background-color:#e4e3d9;
     font-size: 90px;
     line-height: 1;
     margin-left: 80px;
@@ -45,7 +48,7 @@
   }
 
   .right{
-    background-color:#ACD6AB;
+    background-color:#e4e3d9;
     
   }
   .scene {
@@ -97,34 +100,19 @@
   }
   
   .card__face--front {
-    background: rgb(35, 168, 57);
+    background: rgb(58, 189, 58);
     font-weight: 100;
     font-size: 16px;
   }
   
   .card__face--back {
-    background: D6786B;
+    background: tomato;
     font-weight: 100;
     font-size: 16px;
     transform: rotateY(180deg);
   }
   
-  .box{
-  display: flex;
-  width: 200px;
-  height: 200px;
-  background-color: #ACD6AB;
 
-  }
-
-  .box :checked{
-    display: flex;
-    width: 200px;
-    height: 200px;
-    background-color: #1eb95f;
-  
-    }
-   
   
 
     .datetime{
@@ -140,7 +128,7 @@
         width:100%;
         
        padding-top: 40px;
-        background: #ACD6AB;
+       
       
     }
     #clock{
@@ -191,7 +179,9 @@
     color: #f1f1f1;
     min-width: 100%;
   }
-
+  h2{
+    padding-left: 5%;
+  }
   
   .sticky {
     position: fixed;
@@ -215,22 +205,22 @@
   }
   
   .left{
-    background-color:#ACD6AB;
+    
     font-size: 36px;
     line-height: 1;
-    margin-left: 8%;
+    margin-left: 5%;
   }
 
   .right{
-    background-color:#ACD6AB;
-    margin-right: 8%;
+   
+    margin-right: 5%;
     
   }
   .datetime{
     font-family: Helvetica, sans-serif;
     font-weight: 100;
     font-size: 20px;
-    margin-left: 8%;
+    margin-left: 5%;
 }
 
 .clockdate-wrapper {
@@ -239,7 +229,7 @@
     width:100%;
     
    padding-top: 10px;
-    background: #ACD6AB;
+   
   
 }
 #clock{
@@ -257,7 +247,7 @@
 }
 #date {
   padding-top: 10px;
-    letter-spacing:3px;
+    letter-spacing:0;
     font-size:20px;
     font-family:helvetica;
     font-weight: 100;
