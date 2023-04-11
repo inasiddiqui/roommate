@@ -1,29 +1,25 @@
 
-* {
-    box-sizing: border-box;
-  }
+
   
   body {
     font-family: Helvetica, sans-serif;
     background: #ACD6AB;
+    margin: 0;
   }
   
-  /* Style the header */
+
   .header {
-    background-color: #373737;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 100;
+    padding: 10px 16px;
+    background: #555;
     color: #f1f1f1;
   }
   
-  h2{
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 100;
 
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   /* The grid container */
   .grid-container {
@@ -45,6 +41,7 @@
     font-size: 90px;
     line-height: 1;
     margin-left: 80px;
+    flex-wrap: wrap;
   }
 
   .right{
@@ -61,10 +58,7 @@
   
   }
 
-  
-  
- 
-  
+
   .card {
     position: relative;
     width: 100%;
@@ -179,20 +173,147 @@
   
 
 
-  input,
-textarea,
-div[contenteditable],
-iframe {
-	border: 1px solid black;
-	height: 60px;
-    word-wrap: break-word;
-	margin: 80px;
-	width: 400px;
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+
+
+  .header {
+    padding: 10px 16px;
+    background: #000000;
+    color: #f1f1f1;
+    min-width: 100%;
+  }
+
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+   height: auto;
+   width: 100%;
+  } 
+  
+  .left,
+  .right {
+    padding: 8%;
+    font-weight: 100;
+    
+    
+  }
+  
+  .left{
+    background-color:#ACD6AB;
+    font-size: 36px;
+    line-height: 1;
+    margin-left: 8%;
+  }
+
+  .right{
+    background-color:#ACD6AB;
+    
+  }
+  .datetime{
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    margin-left: 8%;
+}
+
+.clockdate-wrapper {
+   
+    
+    width:100%;
+    
+   padding-top: 10px;
+    background: #ACD6AB;
+  
+}
+#clock{
+    font-family: helvetica, sans-serif;
+    font-weight: 100;
+    font-size:20px;
+    color:#000000;
+}
+#clock span {
+    
+    
+    font-size:20px;
+    position:relative;
+    
+}
+#date {
+  padding-top: 10px;
+    letter-spacing:3px;
+    font-size:20px;
+    font-family:helvetica;
+    font-weight: 100;
+    color:#000000;
+}
+.scene {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  flex-wrap: wrap;
+width: 360px;
+height: 360px;
+gap: 2px;
 
 }
 
-textarea,
-div[contenteditable] {
-	padding: 8px;
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 0.5s;
+  border:0.5px solid rgb(0, 0, 0);    
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
 }
 
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  line-height: 120px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border:0.5px solid rgb(0, 0, 0);    
+  -moz-border-radius:50%;
+-webkit-border-radius:50%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: rgb(35, 168, 57);
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.card__face--back {
+  background: D6786B;
+  font-weight: 100;
+  font-size: 16px;
+  transform: rotateY(180deg);
+}
+
+}
