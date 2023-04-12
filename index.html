@@ -8,8 +8,8 @@
 		<link href="style.css" rel="stylesheet">
 
     
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js"></script>
     
         <script defer src="assets/clock.js"></script>
         <script defer src="assets/flip.js"></script>
@@ -34,7 +34,7 @@
 </head>
 <body>
 
-  <div id="mycontent">
+  <div class="specific">
     
   <div class="header" id="myHeader">
 
@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-</div>
+    </div>
 
        
         <div class="grid-container">
@@ -124,7 +124,7 @@
           </label>
             <br>
             <br>
-          <button type="button" onclick="Screenshot()" > Screenshot!</button>
+          <button type="button" class="screenshot_button" > Screenshot!</button>
               </div>
              
             </div>
@@ -148,14 +148,14 @@
        
       </div>
       <script>
-        function screenshot(){
-            var content = document.getElementById("myHeader");
-            html2canvas(content).then(
-                function(canvas){
-                   document.getElementById("myimage").appendChild(canvas);
-                }
-            )
-        }
+        document.querySelector('.screenshot_button').addEventListener('click', function() {
+        html2canvas(document.querySelector('.specific'), {
+            onrendered: function(canvas) {
+                // document.body.appendChild(canvas);
+              return Canvas2Image.saveAsPNG(canvas);
+            }
+        });
+    });
     </script>
 </body>
 </html>
