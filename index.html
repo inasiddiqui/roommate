@@ -8,12 +8,12 @@
 		<link href="style.css" rel="stylesheet">
 
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js"></script>
-    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
         <script defer src="assets/clock.js"></script>
         <script defer src="assets/flip.js"></script>
-        <script defer src="assets/form-state.js"></script>
+       
         <script defer src="assets/toggle.js"></script>
        
    
@@ -33,7 +33,7 @@
 </head>
 <body>
 
-  <div class="specific">
+  <div id="mycontent">
     
   <div class="header" id="myHeader">
 
@@ -123,11 +123,12 @@
           </label>
             <br>
             <br>
-          <button type="button" class="btn">Take a Screenshot!</button>
+          <button type="button" onclick="Screenshot()" > Screenshot!</button>
               </div>
-        
+             
             </div>
-            <section style="background-color: tomato;">
+            </div>
+            <!-- <section style="background-color: tomato;">
             <div class="abouthead">
               Why do I need this?
             </div>
@@ -138,18 +139,18 @@
               This is tool to avoid all those weekly and monthly chats and report status to one another once a week or sorts.
             </div>
           </div>
-        </section>
+        </section> -->
        
       </div>
       <script>
-      document.querySelector('button').addEventListener('click', function() {
-        html2canvas(document.querySelector('.specific'), {
-            onrendered: function(canvas) {
-                // document.body.appendChild(canvas);
-              return Canvas2Image.saveAsPNG(canvas);
-            }
-        });
-    });
-  </script>
+        function screenshot(){
+            var content = document.getElementById("myHeader");
+            html2canvas(content).then(
+                function(canvas){
+                   document.getElementById("myimage").appendChild(canvas);
+                }
+            )
+        }
+    </script>
 </body>
 </html>
