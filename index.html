@@ -8,13 +8,19 @@
 		<link href="style.css" rel="stylesheet">
 
     
-    <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+
+    
     
         <script defer src="assets/clock.js"></script>
         <script defer src="assets/flip.js"></script>
+        <script defer src="assets/sticker.js"></script>
        
         <script defer src="assets/toggle.js"></script>
+        <script defer src="assets/drop.js"></script>
        
    
 		
@@ -60,32 +66,32 @@
           <div class="scene scene--card">
 
             <div class="card" id="card_1">
-           <div id="Milk" class="card__face card__face--front">Got Milk</div>
-              <div class="card__face card__face--back">Get Milk</div>
+           <div id="Milk" class="card__face card__face--front"> We got Milk</div>
+              <div class="card__face card__face--back">We need Milk</div>
             </div>
          
      
          
             <div class="card" id="card_2">
-              <div class="card__face card__face--front">Clean</div>
-              <div class="card__face card__face--back">Throw Trash</div>
+              <div class="card__face card__face--front">I cleaned trash</div>
+              <div class="card__face card__face--back">Trash is full</div>
             </div>
          
          
             <div class="card" id="card_3">
-              <div class="card__face card__face--front">Got Coffee</div>
-              <div class="card__face card__face--back">Buy Coffee </div>
+              <div class="card__face card__face--front">We Got Coffee</div>
+              <div class="card__face card__face--back">We out of Coffee </div>
             </div>
         
          
             <div class="card" id="card_4">
-              <div class="card__face card__face--front">Berries</div>
-              <div class="card__face card__face--back">Get berries</div>
+              <div class="card__face card__face--front">We have TP</div>
+              <div class="card__face card__face--back">We need TP!!</div>
             </div>
           
          
             <div class="card" id="card_5">
-              <div class="card__face card__face--front">In</div>
+              <div class="card__face card__face--front">I am home</div>
               <div class="card__face card__face--back">Gonna be Out</div>
             </div>
           
@@ -103,8 +109,8 @@
         
       
             <div class="card" id="card_8">
-              <div class="card__face card__face--front">Same schec</div>
-              <div class="card__face card__face--back">Busier than usual</div>
+              <div class="card__face card__face--front">Mild busy</div>
+              <div class="card__face card__face--back">Crazy busy</div>
             </div>
           
           
@@ -122,16 +128,23 @@
             <input checked type="checkbox" >
             <span class="slider round"></span>
           </label>
+         
             <br>
             <br>
-          <button type="button" class="screenshot_button" > Screenshot!</button>
+          
+            
+            
               </div>
              
             </div>
-            </div>
+
+            <form action="page1/task.html">
+              <input type="submit" value="Go to Google" />
+          </form>
+
 
             <i class="fa fa-camera camera" class="cicle" style="font-size: 54px;"></i>
-           
+  </div>
 
             <!-- <section style="background-color: tomato;">
             <div class="abouthead">
@@ -147,15 +160,44 @@
         </section> -->
        
       </div>
-      <script>
-        document.querySelector('.screenshot_button').addEventListener('click', function() {
-        html2canvas(document.querySelector('.specific'), {
-            onrendered: function(canvas) {
-                // document.body.appendChild(canvas);
-              return Canvas2Image.saveAsPNG(canvas);
-            }
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script type="text/javascript">  
+        $('.screenshot_button').click(function() {
+          console.log('click')
+            const screenshotTarget = document.querySelector('.specific');
+            html2canvas(screenshotTarget).then(canvas => {
+             // to image as png use below line
+                // const base64image = canvas.toDataURL("image/png");
+             // show the image in window use below line
+                // window.location.href = base64image;
+             
+             // screenshot appended to the body as canvas
+                document.body.appendChild(canvas);  
+                dataURL = canvas.toDataURL();  
+                // to print the screenshot in console use below line
+                // console.log(dataURL);
+                
+                // following line is optional and it is to save the screenshot
+                // on the server side. It initiates an ajax call
+                pushScreenshotToServer(dataURL); 
+            });  
         });
-    });
+  
+        function pushScreenshotToServer(dataURL) {  
+            $.ajax({ 
+                url: "push-screenshot.php",  
+                type: "POST",  
+                data: {  
+                    image: dataURL  
+                },  
+                dataType: "html", 
+                success: function() {  
+                 console.log('Screenshot pushed to server.');
+                }  
+            });  
+        }
     </script>
+    
 </body>
 </html>
