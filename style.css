@@ -256,8 +256,8 @@
     line-height: 200px;
     color: rgb(0, 0, 0);
     text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: 100;
+    font-size: 14px;
     border:0.5px solid rgb(0, 0, 0);    
     -moz-border-radius:50%;
 -webkit-border-radius:50%;
@@ -273,11 +273,31 @@
   .card__face--back {
     background: tomato;
     font-weight: 100;
-    font-size: 16px;
+    font-size: 12px;
     transform: rotateY(180deg);
   }
   
 
+
+	.patch{
+		border: 1px solid;
+		height:20px;
+		width:20px;
+		border-radius: 50%;
+		display:inline-block;
+		cursor:pointer;
+		box-sizing: border-box;
+		margin:10px 0px;
+	}
+	.patch.active{
+		box-shadow:0px 2px 3px #656565;
+	}
+	.color-red{
+		background-color:tomato;
+	}
+	.color-green{
+		background-color:rgb(114, 189, 114);
+	}
   
 
     .datetime{
@@ -500,8 +520,8 @@
   display: grid;
   grid-template-columns: auto auto auto;
   flex-wrap: wrap;
-width: 350px;
-height: 350px;
+width: 320px;
+height: 320px;
 gap: 2px;
 padding-bottom: 5%;
 
@@ -534,7 +554,7 @@ padding-bottom: 5%;
   color: rgb(0, 0, 0);
   text-align: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   border:0.5px solid rgb(0, 0, 0);    
   -moz-border-radius:50%;
 -webkit-border-radius:50%;
@@ -544,13 +564,13 @@ padding-bottom: 5%;
 .card__face--front {
   background: rgb(114, 189, 114);
   font-weight: 100;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card__face--back {
   background: D6786B;
   font-weight: 100;
-  font-size: 14px;
+  font-size: 12px;
   transform: rotateY(180deg);
 }
 
@@ -580,8 +600,8 @@ padding-bottom: 5%;
 .switch {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 34px;
+  width: 60px;
+  height: 24px;
   
 }
 
@@ -607,8 +627,8 @@ padding-bottom: 5%;
 .slider:before {
   position: absolute;
   content: "";
-  height: 34px;
-  width: 34px;
+  height: 24px;
+  width: 24px;
   left: 0px;
   bottom: 0px;
   background-color: rgb(0, 0, 0);
@@ -630,9 +650,9 @@ input:checked+.slider {
 } */
 
 input:checked+.slider:before {
-  -webkit-transform: translateX(200px);
-  -ms-transform: translateX(200px);
-  transform: translateX(66px);
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(36px);
 }
 
 
