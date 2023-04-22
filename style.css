@@ -1,14 +1,20 @@
 
 :root.light {
-	--color-bg: #c4e1d6;
+	--color-bg: #e1e1d2;
 	--color-txt: #1733eb;
-	--hover-color: #d306b1;
+	--hover-color: #000000;
+  --hover-color2: rgb(248, 47, 187);
+  --hover-color3: rgb(68, 104, 49);
+
+  
 }
 
 :root.dark {
 	--color-bg: #202020;
 	--color-txt: #badbac;
 	--hover-color: #9df662;
+  --hover-color2: rgb(255, 221, 0);
+  --hover-color3: rgb(0, 60, 255);
 }
 
   
@@ -111,7 +117,7 @@
     border-radius: 10px;
     width: 90%;
     padding: 5%;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 5%;
     height: 15vh;
   }
@@ -213,7 +219,6 @@
   width: 550px;
   height: 550px;
   gap: 1%;
-
 border-radius: 10px;
 padding-left: 0;
 padding-right: 12%;
@@ -257,11 +262,9 @@ padding-top: 2%;
     height: 100%;
     border-radius: 10px;
     line-height: 170px;
-   
     text-align: center;
     font-weight: 400;
     font-size: 14px;
-   
     -moz-border-radius:5px;
 -webkit-border-radius:5px;
     backface-visibility: hidden;
@@ -324,23 +327,64 @@ padding-top: 2%;
     cursor: pointer;
   }
 
-  #mydiv {
+
+  /* #mydiv {
     position: absolute;
     z-index: 9;
     background-color: var(--hover-color);
     text-align: center;
     border: 1px solid var(--color-bg);
     
-  }
+  } */
   
-  #mydivheader {
+  /* #mydivheader {
     
     padding: 10px;
     cursor: move;
     z-index: 10;
     background-color: var(--hover-color);
     color:var(--color-bg);
+  } */
+  .sticker-grid{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    position: relative;
+  
+    
   }
+
+  .sticker{
+    position: absolute;
+    z-index: 9;
+    background-color: var(--hover-color);
+    text-align: center;
+    border: 1px solid var(--color-bg);
+    gap: 20px;
+  
+    
+    
+  } 
+  
+   .sticker div {
+    padding: 5px;
+    cursor: move;
+    z-index: 10;
+    color:var(--color-bg);
+    font-size: 14px;
+    box-shadow: #202020 0.5;
+  
+
+  }
+
+  #mydiv2header{
+    background: var(--hover-color2);
+  }
+  #mydiv3header{
+    background: var(--hover-color3);
+  }
+ 
   
   .footer {
       

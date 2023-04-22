@@ -1,5 +1,7 @@
 //Make the DIV element draggagle:
 dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("mydiv2"));
+dragElement(document.getElementById("mydiv3"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -33,11 +35,28 @@ function dragElement(elmnt) {
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    
   }
+  
 
   function closeDragElement() {
     /* stop moving when mouse button is released:*/
     document.onmouseup = null;
     document.onmousemove = null;
+    elmnt.style.scale="1.4";
+    elmnt.style.transform=`rotate(${randomNumber(-10,20)}deg)`;
   }
 }
+  //selecting all stickers
+    document.querySelectorAll('.sticker').forEach(sticker=> {
+      sticker.addEventListener('dblclick',function(){
+        sticker.style.scale="1";
+      })
+    });
+
+    function randomNumber(min, max) {
+      return (
+        Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+        Math.ceil(min)
+      );
+    }
