@@ -1,43 +1,62 @@
-class App extends React.Component {
-    componentDidMount () {
-      let left = document.getElementById('left');
-      let right = document.getElementById('right');
-      dragula([left, right]);
-    }
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("mydiv2"));
+dragElement(document.getElementById("mydiv3"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     
-    render () {
-      return (
-        <div className="container">
-          <div id="left" className="container-drop">
-            <Card body="Card 3"/>
-            <Card body="Card 4"/>
-          </div>
-          <div id="right" className="container-drop">
-            <Card body="Card 1"/>
-            <Card body="Card 2"/>
-          </div>
-        </div>
-      );
-    }
   }
   
-  class Card extends React.Component {
-    constructor (props) {
-      super(props);
-    }
-    
-    render () {
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+    elmnt.style.scale="1.4";
+    elmnt.style.transform=`rotate(${randomNumber(-10,20)}deg)`;
+  }
+}
+  //selecting all stickers
+    document.querySelectorAll('.sticker').forEach(sticker=> {
+      sticker.addEventListener('dblclick',function(){
+        sticker.style.scale="1";
+      })
+    });
+
+    function randomNumber(min, max) {
       return (
-        <div className="card-drop">
-          <div className="card-header">
-            <h3>Example Card</h3>
-          </div>
-          <div className="card-body">
-            <p>{this.props.body}</p>
-          </div>
-        </div>
+        Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) +
+        Math.ceil(min)
       );
     }
-  }
-  
-  React.render(<App />, document.getElementById('container-drop'));
