@@ -124,7 +124,7 @@
   .switch-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 200px!important;
+    width: 300px!important;
 
     
   }
@@ -625,8 +625,10 @@ padding-top: 2%;
     }
     .switch-container{
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      width: 60% !important;
+      grid-template-columns: auto auto;
+      
+      width: 200px !important;
+   
       
     }
     .leftswitch{
@@ -635,6 +637,7 @@ padding-top: 2%;
     }
     .rightswitch{
       float: right;
+     
     }
 
     .slider {

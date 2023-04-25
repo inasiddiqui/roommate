@@ -4,7 +4,7 @@ dragElement(document.getElementById("mydiv2"));
 dragElement(document.getElementById("mydiv3"));
 
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var pos1, pos2 , pos3 , pos4 ;
   if (document.getElementById(elmnt.id + "header")) {
     /* if present, the header is where you move the DIV from:*/
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -17,6 +17,7 @@ function dragElement(elmnt) {
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
+    // elmnt.style.position="absolute";
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
@@ -49,8 +50,10 @@ function dragElement(elmnt) {
 }
   //selecting all stickers
     document.querySelectorAll('.sticker').forEach(sticker=> {
+      
       sticker.addEventListener('dblclick',function(){
         sticker.style.scale="1";
+        // sticker.style.position="absolute";
       })
     });
 

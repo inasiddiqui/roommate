@@ -386,7 +386,19 @@ padding-top: 2%;
   #mydiv3header{
     background: var(--hover-color3);
   }
+  #mydiv{
+    left: 0;
+   }
  
+   #mydiv2{
+  
+     left: 120px;
+   }
+ 
+   #mydiv3{
+     left: 200px;
+   
+   }
   
   .footer {
       
@@ -619,6 +631,7 @@ padding-top: 2%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 60% !important;
+      gap: 2%;
       
     }
     .leftswitch{
