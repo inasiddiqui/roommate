@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="assets/reset.css" rel="stylesheet">
+		<link href="assets/style.css" rel="stylesheet">
+		<script defer src="assets/arena.js"></script>
+		<script defer src="assets/main.js"></script>
+        <script defer src="assets/bg.js"></script>
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.typekit.net/jyx4avt.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+       
+        <title> 2507</title>
+        <link href="favicon.ico" rel="icon" sizes="any"/>
+	</head>
+
+	<body>
+
+	
+
+		<section class="flex-container">
+			<!-- Replace this URL with your channel to connect the API! -->
+			<a href="https://www.are.na/ina-siddiqui/bills-archives" id="channel-url">
+				<h1 class="channel-title"></h1> <!-- The channel title will be inserted inside this h1. -->
+			</a>
+			<div class="channel-description"></div> <!-- Same here for the channel description. -->
+		</section>
+
+			
+		<template id="channel-owner">
+			
+			<a class="link"> <!-- Link to their profile inserts here. -->
+				<p class="full-name"></p> <!-- Username inserts here. -->
+			</a>
+		
+	</template>
+	<!-- And collaborator. -->
+	<template id="channel-collaborator">
+						
+			<a class="link">
+				<p class="full-name"></p>
+			</a>
+		
+	</template>
+		<br>
+	
+
+
+		<br><br>
+				
+		
+			<main>
+           
+			<ul class="audio-embed-blocks audio-file-blocks image-blocks embed-blocks link-blocks text-blocks video-embed-blocks video-file-blocks"> </ul>
+		</main>
+		
+		<!-- These are the templates for the various block types, below. -->
+		<!-- You can move/nest/remove any of the insertion points! -->
+		<!-- For example, you could only show images for actual image blocks. -->
+		<!-- You could not show the type if you group them by section, above. -->
+		<!-- Template for the channel owner. -->
+	
+
+				
+	
+		
+ 		<!-- Spotify, Soundcloud, etc. -->
+		
+		<template id="audio-embed-block">
+		
+				<li class="audio-embed"> <!-- You can use the container classes to style a whole type. -->
+					<!-- <h3 class="title"></h3> Block title inserts here. -->
+					<figure>
+						<img class="image-square">
+						
+					</figure>
+					<!-- <div class="embed"></div> <!-- Embed iframe inserts here.
+					<a class="link"> <!-- Original URL inserts here. -->
+						<!--<p class="link-title"></p> <!-- Link title inserts here. -->
+					<!--</a>  -->
+					<p class="time-updated"></p> <!-- When it was last updated. -->
+
+					<aside>
+						<div class="aside-grid-container">
+							<div class="aside-item">
+						<!-- <img class="image-thumb"> -->
+						<div class="embed"></div>
+					</div>
+
+					<div class="aside-item">
+						<h3 class="title"></h3>
+						<a class="link">
+							<p class="link-title"></p>
+							
+					</a>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+						<div class="button-style">
+							<a class="link" > Go to Source &#x21E8;</a> </div>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+					
+				</li>
+			
+		</template>
+
+ 		<!-- Uploaded audio files. -->
+
+		<template id="audio-file-block">
+	
+				<li class="audio-file-block audio-spacing">
+					<!-- <h3 class="title"></h3> -->
+					<figure>
+						<audio class="audio" controls></audio> 
+						
+					</figure>
+					
+					<p class="time-updated"></p>
+					
+					<aside>
+						<div class="aside-grid-container">
+							<div class="aside-item">
+								<audio class="audio" controls></audio> 
+					</div>
+
+					<div class="aside-item">
+						<h3 class="title"></h3>
+							<p class="link-title"></p>
+							
+					</a>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+						<div class="button-style">
+							<a class="link" > Go to Source &#x21E8;</a> </div>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+				</li>
+		
+		</template>
+
+
+		<!-- Images. -->
+
+		<template id="image-block" >
+		
+				<li class="image-block ">
+					
+					
+					<!-- <h3 class="title"></h3> -->
+
+					<figure>
+						<img class="image-square">
+						
+					</figure>
+					<!-- <a class="link">
+						<p class="link-title"></p>
+					</a> -->
+					
+					<p class="time-updated"></p>
+					<aside>
+						<div class="aside-grid-container">
+							<div class="aside-item">
+						<img class="image">
+					</div>
+
+					<div class="aside-item">
+						<h3 class="title"></h3>
+						<a class="link">
+							<p class="link-title"></p>
+							
+					</a>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+				
+				</li>
+		</template>
+
+
+		<!-- Links (saved sites). -->
+
+		<template id="link-block">
+
+				<li class="link-block">
+					<!-- <h3 class="title"></h3> -->
+					<figure>
+						<img class="image-square">
+						
+					</figure>
+					<a class="link">
+						<!-- <p class="link-title"></p> -->
+					</a>
+					<p class="time-updated"></p>
+
+					<aside>
+						<div class="aside-grid-container">
+							<div class="aside-item">
+						<img class="image">
+					</div>
+
+					<div class="aside-item">
+						<h3 class="title"></h3>
+						<a class="link">
+							<p class="link-title"></p>
+							
+					</a>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+						<div class="button-style">
+							<a class="link" > Go to Source &#x21E8;</a> </div>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+					
+				</li>
+		</template>
+		
+
+
+		<!-- Text. -->
+
+		<template id="text-block">
+				<li class="text-block">
+					<!-- <h3 class="title"></h3> -->
+					<br>
+
+					<div class="content"></div> <!-- Text blocks insert their HTML here. -->
+					
+					<p class="time-updated"></p>
+					<aside>
+						<div class="aside-grid-container">
+							<div class="aside-item">
+						<img class="content">
+					</div>
+
+					<div class="aside-item">
+						<a class="link">
+							<p class="link-title"></p>
+							
+					</a>
+					<h3 class="title"></h3>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+						<div class="button-style">
+							<a class="link" > Go to Source &#x21E8;</a> </div>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+					
+				</li>
+		</template>
+
+		<!-- YouTube, Vimeo, etc. -->
+		<template id="video-embed-block">
+			
+				<li class="video-embed-block">
+					<!-- <h3 class="title"></h3> -->
+					
+					<figure>
+						<img class="image-square">
+						
+					</figure>
+				
+					<a width="300" height="300" class="link">
+						<!-- <p class="link-title"></p> -->
+					</a> 
+					<p class="time-updated"></p>
+					<aside>
+						<div class="aside-grid-container ">
+							<div class="aside-item " > 
+						<div class="embed"> </div>
+					</div>
+
+					<div class="aside-item">
+						<h3 class="title"></h3>
+						<a class="link">
+							<p class="link-title"></p>
+							
+					</a>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+						<div class="button-style">
+							<a class="link" > Go to Source &#x21E8;</a> </div>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+				</li>
+			
+		</template>
+
+
+
+		<!-- Uploaded video files. -->
+		<template id="video-file-block">
+		
+				<li class="video-file-block">
+					<!-- <h3 class="title"></h3> -->
+					<figure>
+						<img class="image-thumb">
+						
+					</figure>
+					<video controls> </video> <!-- Video source inserts here. -->
+					
+					<p class="time-updated"></p>
+					
+
+					<aside>
+						<div class="aside-grid-container">
+							<div class="aside-item">
+								<video controls> </video>
+					</div>
+
+					<div class="aside-item">
+						<h3 class="title"></h3>
+						<a class="link">
+							<p class="link-title"></p>
+							
+					</a>
+						<p class="description"></p>
+						<br>
+						<p class="time-updated"></p>
+						<p class="time-created"></p>
+					<br>
+						<div class="button-style">
+							<a class="link" > Go to Source &#x21E8;</a> </div>
+							
+							<div class="button-style">
+								<a id="channel-url" > View All &#x21E8;</a> </div>
+					</div>
+					</div>
+					
+					
+					</aside>
+				</li>
+			
+		</template>
+
+
+	</section>
+	<br>
+	<br>
+	<footer>
+        <div class="footer"> 
+         <a href="archive/archive.html" class="buttona">Archive</a>
+        <div class="footersmall"> Copyrights@InaSiddiqui | 2023</div>
+       
+       </footer>
+
+	
+
+	
+	</body>
+</html>

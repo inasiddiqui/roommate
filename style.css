@@ -357,15 +357,12 @@ padding-top: 2%;
   }
 
   .sticker{
-    position: absolute;
+    position: absolute !important;
     z-index: 9;
     background-color: var(--hover-color);
     text-align: center;
     border: 1px solid var(--color-bg);
-    gap: 20px;
-  
-    
-    
+
   } 
   
    .sticker div {
@@ -375,8 +372,6 @@ padding-top: 2%;
     color:var(--color-bg);
     font-size: 14px;
     box-shadow: #202020 0.5;
-  
-
   }
 
   #mydiv2header{
@@ -384,6 +379,20 @@ padding-top: 2%;
   }
   #mydiv3header{
     background: var(--hover-color3);
+  }
+
+  #mydiv{
+   left: 0;
+  }
+
+  #mydiv2{
+ 
+    left: 120px;
+  }
+
+  #mydiv3{
+    left: 200px;
+  
   }
  
   
