@@ -13,16 +13,26 @@
 
   
   body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+   font-family: Helvetica;
     background: var(--color-bg);
     color: var(--color-txt);
     margin: 0;
   }
-
+  .back {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  .back:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
 
 
 .flex-container {
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -47,7 +57,7 @@
 
 
 .channel-title:hover{
-  color: rgb(255, 255, 255);
+  color: var(--hover-color);
 }
 
 .channel-description {
@@ -58,76 +68,38 @@
   border: var(--color-txt) 1px solid;
   flex: 60%;
   text-align: left;
+  font-weight: 100;
+  line-height: 180%;
 }
 
 
-.full-name {
- font-size: 24px;
- 
 
-}
-.channel-owner {
-  background-color: rgb(197, 95, 82);
-  border-radius: 25px;
-  padding: 30px;
-  font-size: 20px;
-  
-  min-height: 100px;
-  
-}
-.channel-collaborator{
-  background-color: rgb(157, 121, 198);
-  border-radius: 25px;
-  padding: 30px;
-  font-size: 20px;
-  
-  min-height: 100px;
-  
- 
-}
 .channel-collaborator:hover{
   background-color: black;
   color: white;
 }
 
-.channel-owner:hover{
-  background-color: black;
-  color: white;
-}
-
-
-
-.channel-count{
-  border-style: dashed;
-  border-radius: 15px;
-  padding: 30px;
-  font-size: 24px;
- 
-  padding: 20px;
-  margin: 10px;
-  
-  }
-  
 
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-    padding: 5px;
+   width: 100%;
     position: relative;
+    gap: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
   }
 
   li {
     
     background-color: var(--color-bg);
-    
+    gap: 10px;
     border-radius: 60px;
     padding: 0;
-    padding-top: 30px;
+    padding-top: 0;
     font-size: 30px;
     text-align: center;
-    width: 350px;
-    height: 350px;
+    
     position: relative;
     aspect-ratio: 1;
     transition: all 0.3s ease-out;
@@ -149,40 +121,36 @@
     width: 300px;
     height: 300px;
     align-self: center;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    mix-blend-mode: multiply;
   }
 						.image-square{
-                            width: 280px;
-                            height: 280px;
+              width: auto;
+              height: 100%;
                             border-radius: 10px;
                             align-self: center;
-                            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-                            filter: grayscale(100%);
+                           
                           }
                         
 						.image-display{
-                            width: 280px;
-                            height: 280px;
+                            width: auto;
+                            height: 100%;
                             border-radius: 10px;
                             align-self: center;
-                            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-                            filter: grayscale(100%);
+                         mix-blend-mode: multiply;
                         }
 
                         .image{
-                            width: 400px;
-                            max-height: 500px;
-                            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-            
+                          width: auto;
+                          height: 100%;
+                            mix-blend-mode: multiply;
+                          
                         } 
                         
                         
 						
       .title{
         font-size: 26px;
-        font-family: VT323;
+      
         font-weight: 400;
         padding: 10px;
         text-transform: capitalize;
@@ -197,23 +165,16 @@
       }
 
       
-      .time-updated{
-        font-size: 10px;
-        font-family: Roboto Mono;
-        color: rgb(238, 237, 235);
-        text-decoration: overline 1px dotted ;
-        margin-top: 15px;
-       
-        
-   
-      }
+ 
 
       li:hover  {
         background-color: var(--color-bg);
- 
-     
+        box-shadow: inset;
        cursor: pointer;
-       border: 1px solid var(--color-txt);
+       -webkit-transform: scale(1.02);
+       -ms-transform: scale(1.02);
+       transform: scale(1.02);
+       
       } 
     
       li:hover .time-updated{
@@ -224,345 +185,48 @@
       li:hover  .image-square{
         box-shadow: inset 0 14px 26px rgba(34, 34, 34, 0.2);
       }
-      
-
-      .active .time-updated{
-        color: #ffffff !important;
-
-      }
-
-      .time-created{
-
-
-        font-size: 10px;
+      .footer {
         
-        color: white;
-        text-decoration: overline 1px dotted ;
-        
-      
-      }
-
-    
-
-    
-
-      .type{
+        background-color: var(--color-txt);
+        color: var(--color-bg);
+        border-top: var(--color-txt) 0.5 solid;
+        text-align: center;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
         font-size: 14px;
+        text-align: left;
+        padding: 20px;
        
-        font-weight: 700;
+       
       }
-      
-      .content{
+  
+      .footer:hover{
+        background: var(--hover-color);
+        color: var(--color-bg);
+      }
+      .footersmall {
+        
+        background-color: var(--color-txt);
+        color: var(--color-bg);
+        border-top: var(--color-txt) 0.5 solid;
+        text-align: center;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
         font-size: 12px;
-      
-        font-weight: 200;
-        margin: 5px;
-      }
-
-      .link-title{
+        text-align: left;
+        padding: 20px;
        
-        font-size: 10px;
-        color: rgb(255, 255, 255);
-        font-style: italic;
-        font-weight: 200;
-        padding-left: 10px;
-        
       }
-
-      .arrow {
-        border: solid black;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 3px;
-        
-      }
-      .images-button{
-    
-  border-radius: 25px;
-  padding: 30px;
-  font-size: 24px;
-
-  min-height: 100px;
-  }
-
-      .articles{
-        
-  border-radius: 25px;
-  padding: 30px;
-  font-size: 24px;
-  
-  min-height: 100px;
-  
-
-      }
-
-
-      .images-button:hover{
-        background-color: #000000;
-        color: white;
-      }
-      .articles:hover{
-        background-color: #000000;
-        color: white;
-      }
-
       
-      figure > img { object-fit: cover; }
+
+
 
 
    
-.image-block aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-  background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.image-block aside > img {
-	object-fit: contain;
-}
-
-.image-block.active aside {
-	display: block;
-}
-
-
-.audio-embed aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.audio-embed aside > img {
-	object-fit: contain;
-}
-
-.audio-embed.active aside {
-	display: block;
-}
-
-
-
-
-.audio-file-block aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.audio-file-block aside > img {
-	object-fit: contain;
-}
-
-.audio-file-block.active aside {
-	display: block;
-}
-
-
-
-.video-file-block aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.video-file-block aside > img {
-	object-fit: contain;
-}
-
-.video-file-block.active aside {
-	display: block;
-}
-
-.video-embed-block aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.video-embed-block > img {
-	object-fit: contain;
-}
-
-.video-embed-block.active aside {
-	display: block;
-}
-
-
-.link-block aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.link-block aside > img {
-	object-fit: contain;
-}
-
-.link-block.active aside {
-	display: block;
-}       
-
-
-.text-block aside {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: black;
-	z-index: 2;
-	padding: 40px;
-}
-
-.text-block aside > img {
-	object-fit: contain;
-}
-
-.text-block.active aside {
-	display: block;
-}
-
-.embed{
-  width: inherit;
-}
-
-.description{
-  padding-top: 10px;
-  font-size: 16px;
-  font-family: Roboto Mono;
-  font-weight: 400;
-  text-align: left;
-  color: rgb(0, 0, 0);
-  text-decoration: overline 1px dotted ;
-  background-color: rgb(255, 143, 30);
-  border-radius: 15px;
-  margin: 10px;
-  padding: 10px;
-  
-}
-     .aside-grid-container{
-      display: flex;
-      justify-content: center;
-      
-     }
-
-     .aside-item {
-      
-      border: 1px dotted rgb(255, 255, 255);
-      border-radius: 45px;
-      margin: 20px;
-      padding: 10px;
-      max-width: 700px;
-      text-align: left;
-      padding: 40px;
-      
-    }
-
-    .aside-item-fill{
-      background-color: lightblue;
-  border: solid black 1px;
-  
-    }
-
-    .button-style{
-     
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 14px;
-      border-radius: 10px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-      background-color: rgb(157, 121, 198);
-      color: black;
-      border: 2px solid #555555;
-      font-family: Roboto Mono;
-    }
-
-    .button-style:hover {
-      background-color: #f3c144;
-      color: rgb(0, 0, 0);
-    }
-    .footer {
-      
-      background-color: var(--color-txt);
-      color: var(--color-bg);
-      border-top: var(--color-txt) 0.5 solid;
-      text-align: center;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100vw;
-      font-size: 14px;
-      text-align: left;
-      padding: 20px;
-     
-     
-    }
-  
-    .footer:hover{
-      background: var(--hover-color);
-      color: var(--color-bg);
-    }
-    .footersmall {
-      
-      background-color: var(--color-txt);
-      color: var(--color-bg);
-      border-top: var(--color-txt) 0.5 solid;
-      text-align: center;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100vw;
-      font-size: 12px;
-      text-align: left;
-      padding: 20px;
-     
-    }
-   .audio-spacing{
-    padding-top: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
-   }
 
 
  
@@ -625,464 +289,184 @@
       @media (max-width: 400px)  { 
 
 
-        .full-name{
+        
 
-          font-size: 12px;
-        }
+.flex-container {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 20px;
+  column-gap: 10px;;
+  padding: 10px;
+  max-width: 100vw;
+  z-index: 1;
+  position: sticky;
+}
+
+.channel-title{
+  border: var(--color-txt) 1px solid;
+  border-radius: 25px;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  font-size: 48px;
+
+  flex: 50%;
+}
 
 
-       
+.channel-title:hover{
+  color: var(--hover-color);
+}
+
+.channel-description {
+  background-color: var(--color-bg);
+  border-radius: 25px;
+  padding: 20px;
+  font-size: 14px;
+  border: var(--color-txt) 1px solid;
+  flex: 60%;
+  text-align: left;
+  font-weight: 100;
+  line-height: 180%;
+}
+
+
+
+.channel-collaborator:hover{
+  background-color: black;
+  color: white;
+}
+
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   width: 100%;
+    position: relative;
+    gap: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  li {
+    
+    background-color: var(--color-bg);
+    gap: 10px;
+    border-radius: 60px;
+    padding: 0;
+    padding-top: 0;
+    font-size: 30px;
+    text-align: center;
+    
+    position: relative;
+    aspect-ratio: 1;
+    transition: all 0.3s ease-out;
+     
+  }
+  figure {
+    overflow: hidden;
+    word-break: break-word;
+  }
+  
+
+  /* .grid-item:hover .title {
+    opacity: 1;
+    box-shadow: 5px 10px 8px #e1e1e1;
+   height: 100%; }  */
+
+
+  .image-thumb{
+    width: 300px;
+    height: 300px;
+    align-self: center;
+    mix-blend-mode: multiply;
+  }
+						.image-square{
+              width: auto;
+              height: 100%;
+                            border-radius: 10px;
+                            align-self: center;
+                           
+                          }
+                        
+						.image-display{
+                            width: auto;
+                            height: 100%;
+                            border-radius: 10px;
+                            align-self: center;
+                         mix-blend-mode: multiply;
+                        }
+
+                        .image{
+                          width: auto;
+                          height: 100%;
+                            mix-blend-mode: multiply;
+                          
+                        } 
+                        
+                        
+						
+      .title{
+        font-size: 26px;
       
-        .flex-container {
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          row-gap: 10px;
-          column-gap: 10px;;
-          padding: 10px;
-          max-width: 100vw;
-          z-index: 1;
-        }
-
-      .channel-title{
-        background-color: #2044f6;
-        border-radius: 25px;
+        font-weight: 400;
         padding: 10px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        font-size: 130px;
-        max-width: 100vw;
+        text-transform: capitalize;
+        transition: 0.4s ease-in-out all;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;   
+        padding-top:20px;
+        color: white;
+      
         
       }
+
       
-      .channel-description {
-        background-color: rgb(255, 143, 30);
-        border-radius: 25px;
-        padding: 10px;
-        font-size: 12px;
-        max-width: 100vw;
+ 
+
+      li:hover  {
+        background-color: var(--color-bg);
+        box-shadow: inset;
+       cursor: pointer;
+       -webkit-transform: scale(1.02);
+       -ms-transform: scale(1.02);
+       transform: scale(1.02);
+       
+      } 
+    
+      li:hover .time-updated{
+        color: #000000;
+
+      }
+
+      li:hover  .image-square{
+        box-shadow: inset 0 14px 26px rgba(34, 34, 34, 0.2);
+      }
+      .footer {
+        
+        background-color: var(--color-txt);
+        color: var(--color-bg);
+        border-top: var(--color-txt) 0.5 solid;
+        text-align: center;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        font-size: 16px;
         text-align: left;
+        padding: 20px;
+        margin: 2%;
+       
+       
       }
-      
-       .channel-owner {
-         background-color: rgb(218, 218, 218);
-         border-radius: 15px;
-         font-size: 12px;
-         font-family: Roboto Mono;
-         padding: 10px;
-         min-height: 30px;
-        
-       }
-
-       .channel-owner:hover{
-        background-color: black;
-        color: white;
-       }
-       .channel-collaborator{
-         background-color: rgb(157, 121, 198);
-         border-radius: 15px;
-         font-size: 12px;
-         padding: 10px;
-         min-height: 30px;
-         
-       }
-
-       .channel-collaborator:hover{
-        background-color: black;
-        color: white;
-       }
-       
-       .channel-count{
-         border-style: dashed;
-         border-radius: 15px;
-        
-         font-size: 12px;
-         
-       
-         
-         }
-
-         .images-button{
-          background-color: rgb(255, 206, 30);
-    border-radius: 15px;
-    
-    font-size: 12px;
-    font-family: Roboto Mono;
-    padding: 13px;
-         min-height: 30px;
-   
-    
-  
-        }
-  
-        .articles{
-          background-color: rgb(108, 151, 75);
-    border-radius: 15px;
-    font-size: 12px;
-    font-family: Roboto Mono;
-    padding: 10px;
-         min-height: 30px;
-         
-    
-    
-  
-        }
-
-         ul{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin: 5px;
-            gap: 20px;
-          
-        }
-
-
-           li{
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px dotted rgba(0, 0, 0, 0.8);
-            padding: 5px;
-            border-radius: 15px;
-            font-size: 10px;
-            text-align: center;
-            width: 150px;
-            height: 200px;
-            align-content: center;
-            
-            
-          }
-        
-
-          .title{
-            font-size: 10px;
-            
-            font-weight: 400;
-            padding: 10px;
-            text-transform: capitalize;
-            white-space: nowrap; 
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: white;
-            
-            
-          }
-    
-        
-          image-thumb{
-            width: 100px;
-            height: 100px;
-          }
-                                .image-square{
-                                    width: 120px;
-                                    height: 120px;
-                                    border-radius: 10px;
-                                  }
-                                
-                                .image-display{
-                                  width: 100px;
-                                  height: 100px;
-                                  border-radius: 10px;
-                                }
-        
-                                .image{
-                                  width: 300px;
-                                  /* max-height: 275px; */
-                                }
-                               
-
-
-                                  .time-updated{
-                                    padding-top: 10px;
-                                    font-size: 8px;
-                                
-                                    
-                                    
-                               
-                                  }
-                            
-                                  
-                            
-                                  .time-created{
-                                    font-size: 8px;
-                                  
-                                    
-                                  
-                                  }
-                            
-
-                                  .type{
-                                    font-size: 14px;
-                                    
-                                    font-weight: 700;
-                                  }
-                                  
-                                  .content{
-                                    font-size: 8px;
-                                
-                                    font-weight: 200;
-                                   
-                                  }
-                            
-                                  .link-title{
-                                    font-family: Roboto Mono;
-                                    font-size: 10px;
-                                    color: rgb(255, 255, 255);
-                                    font-style: italic;
-                                    font-weight: 200;
-                                    
-                                  }
-                            
-                                 
-                                  figure > img { object-fit: cover; }
-                            
-                            
-                               
-                            .image-block aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 20px;
-                            }
-                            
-                            .image-block aside > img {
-                              object-fit: contain;
-                            }
-                            
-                            .image-block.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }
-                            
-                            
-                            .audio-embed aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 20px;
-                            }
-                            
-                            .audio-embed aside > img {
-                              object-fit: contain;
-                            }
-                            
-                            .audio-embed.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }
-                            
-                            
-                            
-                            
-                            .audio-file-block aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 40px;
-                            }
-                            
-                            .audio-file-block aside > img {
-                              object-fit: contain;
-                            }
-                            
-                            .audio-file-block.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }
-                            
-                            
-                            
-                            .video-file-block aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 20px;
-                            }
-                            
-                            .video-file-block aside > img {
-                              object-fit: contain;
-                            }
-                            
-                            .video-file-block.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }
-                            
-                            .video-embed-block aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 20px;
-                            }
-                            
-                            .video-embed-block > img {
-                              object-fit: contain;
-                            }
-                            
-                            .video-embed-block.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }
-                            
-                            
-                            .link-block aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 20px;
-                            }
-                            
-                            .link-block aside > img {
-                              object-fit: contain;
-                            }
-                            
-                            .link-block.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }       
-                            
-                            
-                            .text-block aside {
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              background-color: black;
-                              z-index: 2;
-                              padding: 40px;
-                            }
-                            
-                            .text-block aside > img {
-                              object-fit: contain;
-                            }
-                            
-                            .text-block.active aside {
-                              display: block;
-                              overflow: scroll;
-                            }
-                            
-                            .embed{
-                              width: inherit;
-                              overflow: hidden;
-                              z-index: 100;
-                            }
-
-                            iframe{
-                              width: 100% important! ;
-                              height: 100% important! ;
-                            }
-
-                            .description{
-                              padding-top: 10px;
-                              font-size: 12px;
-                              font-family: Roboto Mono;
-                              font-weight: 400;
-                              text-align: left;
-                              color: rgb(0, 0, 0);
-                              text-decoration: overline 1px dotted ;
-                              background-color: rgb(255, 143, 30);
-                              border-radius: 15px;
-                              margin: 10px;
-                              padding: 10px;
-                              
-                            }
-                                 .aside-grid-container{
-                                  display: flex;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  
-                                 }
-                            
-                                 .aside-item {
-                                  
-                                  border: 1px dotted rgb(255, 255, 255);
-                                  border-radius: 25px;
-                                  margin: 5px;
-                                  padding: 10px;
-                                  max-width: 300px;
-                                  text-align: center;
-                                  
-                                 
-                                  
-                                }
-                            
-                               
-                            
-                                .button-style{
-                                 
-                                  padding: 8px 16px;
-                                  text-align: center;
-                                  text-decoration: none;
-                                  display: inline-block;
-                                  font-size: 10px;
-                                  border-radius: 10px;
-                                  margin: 4px 2px;
-                                  transition-duration: 0.4s;
-                                  cursor: pointer;
-                                  background-color: rgb(157, 121, 198);
-                                  color: black;
-                                  border: 2px solid #555555;
-                                  font-family: Roboto Mono;
-                                }
-                            
-                                .button-style:hover {
-                                  background-color: #f3c144;
-                                  color: rgb(0, 0, 0);
-                                }
-                                .footer {
-                                  left: 0;
-                                  bottom: 0;
-                                  
-                                  background-color: rgb(157, 121, 198);
-                                  font-family: Roboto Mono;
-                                  border-radius: 20px;
-                                  color: rgb(0, 0, 0);
-                                  text-align: left;
-                                  font-family: Roboto Mono;
-                                  font-size: 10px;
-                                  padding: 20px;
-                                  margin-top: 50px;
-                                  margin: 20px
-                                  
-                               }
-                               .audio-spacing{
-                                padding-top: 100px;
-                                padding-left: 10px;
-                                padding-right: 10px;
-                               }
-                            
-                                
-                            
+      .footer:hover{
+        background: var(--hover-color);
+        color: var(--color-bg);
+      }
+                    
                                   
                             
                           

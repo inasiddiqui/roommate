@@ -19,7 +19,7 @@
 
   
   body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: helvetica;
     background: var(--color-bg);
     color: var(--color-txt);
     margin: 0;
@@ -397,9 +397,9 @@ padding-top: 2%;
  
   
   .footer {
-      
+        
     background-color: var(--color-txt);
-    color: var(--color-bg);
+    color: var(--color-bg) !important;
     border-top: var(--color-txt) 0.5 solid;
     text-align: center;
     bottom: 0;
@@ -409,8 +409,8 @@ padding-top: 2%;
     font-size: 14px;
     text-align: left;
     padding: 20px;
-   
-   
+    text-decoration: none;
+
   }
 
   .footer:hover{
